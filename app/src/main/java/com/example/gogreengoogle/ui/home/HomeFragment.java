@@ -39,7 +39,6 @@ public class HomeFragment extends Fragment {
     private String search;
     private TextInputLayout searchQuery;
     private Button searchButton;
-//    private TextView yoyo;
     ArrayList<String> TextList = new ArrayList<>(1);
     ArrayList<String> UrlList = new ArrayList<>(1);
 
@@ -48,7 +47,6 @@ public class HomeFragment extends Fragment {
 
         searchQuery = root.findViewById(R.id.google_query);
         searchButton = root.findViewById(R.id.search_button);
-//        yoyo = root.findViewById(R.id.test);
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -97,11 +95,12 @@ public class HomeFragment extends Fragment {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-//            yoyo.setText(TextList.toString());
             Intent openSearchResult = new Intent(getContext(), SearchPageActivity.class);
             openSearchResult.putExtra("TextArrayList", TextList);
             openSearchResult.putExtra("UrlArrayList", UrlList);
             startActivity(openSearchResult);
+            TextList.clear();
+            UrlList.clear();
         }
 
         private String makeHttpRequest(URL url) throws IOException {
@@ -138,13 +137,11 @@ public class HomeFragment extends Fragment {
             try {
                 parentObject = new JSONObject(finalOutput);
                 RelatedTopicsArray = parentObject.getJSONArray("RelatedTopics");
-//                Log.e("relatedtopic array", RelatedTopicsArray.toString());
                 for (int i = 0; i < RelatedTopicsArray.length(); i++) {
 
                     for (int k = 0; k < RelatedTopicsArray.length(); k++) {
                         TextList.add(RelatedTopicsArray.getJSONObject(k).getString("Text"));
                         UrlList.add(RelatedTopicsArray.getJSONObject(k).getString("FirstURL"));
-//                        Log.e("array", TextList.get(k));
                     }
 
                     if (TextList.toString() == "[]" || UrlList.toString() == "[]") {
