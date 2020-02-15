@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GoGreenGoogle</string>
+    <string name="title_graph">Stats</string>
+    <string name="title_home">Home</string>
+    <string name="title_calc">Calculator</string>
+</resources>
