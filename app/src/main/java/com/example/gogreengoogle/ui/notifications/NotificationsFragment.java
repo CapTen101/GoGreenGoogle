@@ -47,14 +47,14 @@ public class NotificationsFragment extends Fragment {
         }
 
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        int counter = sharedPref.getInt("counter",10);
+        int counter = sharedPref.getInt("counter",1);
         double carboncurrent = 0.2*counter;
         Log.e("counter",""+counter);
 
-        Week1.setText(""+avg1);
-        Week2.setText(""+avg2);
-        Week3.setText(""+avg3);
-        current.setText(""+carboncurrent);
+        Week1.setText("Week: 1 averge Footprint- "+avg1);
+        Week2.setText("Week: 2 averge Footprint- "+avg2);
+        Week3.setText("Week: 3 averge Footprint- "+avg3);
+        current.setText("Today's Carbon Footprint- "+carboncurrent);
 
         return root;
     }

@@ -294,10 +294,6 @@ public class HomeFragment extends Fragment {
             TextList.clear();
             UrlList.clear();
 
-//            SharedPreferences sharedPref1 = getActivity().getPreferences(Context.MODE_PRIVATE);
-//            int counter1 = sharedPref1.getInt("counter",10);
-//            counter1++;
-
             SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("counter", searchCounter);
