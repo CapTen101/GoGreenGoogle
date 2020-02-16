@@ -12,9 +12,9 @@ import com.example.gogreengoogle.R;
 
 public class DashboardFragment extends Fragment {
 
-
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
+
         return root;
     }
 }

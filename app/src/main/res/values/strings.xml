@@ -3,4 +3,102 @@
     <string name="title_graph">Stats</string>
     <string name="title_home">Home</string>
     <string name="title_calc">Calculator</string>
+    <string name="dummydata">[
+  {
+    "weeknumber": 1,
+    "co2": [
+      4,
+      4.8,
+      6,
+      5,
+      4,
+      3.6,
+      3.1
+    ]
+  },
+  {
+    "weeknumber": 2,
+    "co2": [
+      2,
+      5.6,
+      6,
+      7,
+      4.4,
+      4.6,
+      5.2
+    ]
+  },
+  {
+    "weeknumber": 3,
+    "co2": [
+      2.4,
+      5.8,
+      6.4,
+      7.6,
+      8.4,
+      4,
+      5
+    ]
+  },
+  {
+    "weeknumber": 4,
+    "co2": [
+      3,
+      4.4,
+      5.8,
+      6.4,
+      7.6,
+      5.8,
+      6
+    ]
+  },
+  {
+    "weeknumber": 5,
+    "co2": [
+      6,
+      5.6,
+      4.6,
+      5.8,
+      6.4,
+      4,
+      2
+    ]
+  },
+  {
+    "weeknumber": 6,
+    "co2": [
+      5,
+      7,
+      4.4,
+      7.6,
+      8,
+      5,
+      6.4
+    ]
+  },
+  {
+    "weeknumber": 7,
+    "co2": [
+      2,
+      5.6,
+      8,
+      6.4,
+      7.6,
+      5.2,
+      5
+    ]
+  },
+  {
+    "weeknumber": 8,
+    "co2": [
+      3,
+      4.8,
+      5,
+      5.6,
+      7,
+      8,
+      7.8
+    ]
+  }
+]</string>
 </resources>

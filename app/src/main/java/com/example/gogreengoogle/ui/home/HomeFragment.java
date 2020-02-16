@@ -10,19 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.gogreengoogle.R;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -41,6 +38,7 @@ public class HomeFragment extends Fragment {
     private Button searchButton;
     ArrayList<String> TextList = new ArrayList<>(1);
     ArrayList<String> UrlList = new ArrayList<>(1);
+    int searchCounter = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
@@ -55,13 +53,6 @@ public class HomeFragment extends Fragment {
 
                 SearchRequest request = new SearchRequest();
                 request.execute();
-
-                Integer searchCounter=0;
-                searchCounter++;
-                SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt("counter", searchCounter);
-                editor.apply();
 
             }
         });
@@ -101,6 +92,11 @@ public class HomeFragment extends Fragment {
             startActivity(openSearchResult);
             TextList.clear();
             UrlList.clear();
+            searchCounter+=1;
+            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("counter", ++searchCounter);
+            editor.apply();
         }
 
         private String makeHttpRequest(URL url) throws IOException {
@@ -138,10 +134,23 @@ public class HomeFragment extends Fragment {
                 parentObject = new JSONObject(finalOutput);
                 RelatedTopicsArray = parentObject.getJSONArray("RelatedTopics");
                 for (int i = 0; i < RelatedTopicsArray.length(); i++) {
-
                     for (int k = 0; k < RelatedTopicsArray.length(); k++) {
                         TextList.add(RelatedTopicsArray.getJSONObject(k).getString("Text"));
                         UrlList.add(RelatedTopicsArray.getJSONObject(k).getString("FirstURL"));
+//                        Integer size = UrlList.get(k).length();
+//                        String ch1 =  UrlList.get(k).substring(0,8);
+////                        String ch2 =  UrlList.get(k).substring(8,18);
+//                        if(size>18) {
+//                            String ch3 =  UrlList.get(k).substring(18,size);
+//                            String ch2 = "google";
+//                            String finalURL = ch1+ch2+ch3;
+//                            UrlList.set(k,finalURL);
+//                        }
+
+
+//                        Log.e("yoyoyostring replace",finalURL);
+//                        Log.e("string replace",UrlList.get(k));
+//                        Log.e("string replace",ch2);
                     }
 
                     if (TextList.toString() == "[]" || UrlList.toString() == "[]") {
@@ -149,6 +158,19 @@ public class HomeFragment extends Fragment {
                         for (int j = 0; j < TopicsArray.length(); j++) {
                             TextList.add(TopicsArray.getJSONObject(j).getString("Text"));
                             UrlList.add(TopicsArray.getJSONObject(j).getString("FirstURL"));
+//                            Integer size = UrlList.get(j).length();
+//                            String ch1 =  UrlList.get(j).substring(0,8);
+////                            String ch2 =  UrlList.get(j).substring(8,18);
+//                            if(size>18) {
+//                                String ch3 =  UrlList.get(j).substring(18,size);
+//                                String ch2 = "google";
+//                                String finalURL = ch1+ch2+ch3;
+//                                UrlList.set(j,finalURL);
+//                            }
+
+//                            Log.e("yoyoyostring replace",finalURL);
+//                            Log.e("string replace",UrlList.get(j));
+//                            Log.e("string replace",ch2);
                         }
                     }
                 }
