@@ -27,3 +27,8 @@ Link to the below presentation my team presented to the jury: `https://slides.co
 * Some features that are discussed above:
 
 ![alt text](https://img.techpowerup.org/200319/screenshot-from-2020-03-19-23-50-31.png "Features Screen")
+
+
+
+# License
+> Animated-Text-Kit is licensed under MIT license. View license.
