@@ -31,4 +31,4 @@ Link to the below presentation my team presented to the jury: `https://slides.co
 
 
 # License
-> Animated-Text-Kit is licensed under MIT license. View license.
+> GoGreenGoogle is licensed under `MIT license`.
